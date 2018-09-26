@@ -6,4 +6,13 @@ public class ArrayDemo{
     }
     System.out.print(ary[ary.length - 1] + " ]")
   }
+
+
+
+  public static void main(String[] args){
+        int[] testA {
+            2, 3, 5, 7, 11, 13, 17, 19, 23
+        }
+        System.out.println(printArray(testA));
+  }
 }
