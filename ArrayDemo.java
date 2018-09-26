@@ -35,6 +35,19 @@ public class ArrayDemo{
     }
     return count;
   }
+  // fourth function - modify 2D array with 1s and 3s
+  public static void fill2D(int[][] vals){
+    for (int i = 0; i < vals.length; i++) {
+      for (int x = 0; x < vals[i].length; x++) {
+        if (i == x) {
+          vals[i][x] = 3;
+        } else {
+          vals[i][x] = 1;
+        }
+      }
+    }
+    printArray(vals);
+  }
 
 
   public static void main(String[] args){
@@ -52,5 +65,8 @@ public class ArrayDemo{
     printArray(testB);
     System.out.println("\n-----------");
     System.out.println(countZeros2D(testB)); // 4
+    System.out.println("------------");
+    int[][] testC = new int[4][5];
+    fill2D(testC);
   }
 }
