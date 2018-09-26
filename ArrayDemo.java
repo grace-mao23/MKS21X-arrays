@@ -48,7 +48,23 @@ public class ArrayDemo{
     }
     printArray(vals);
   }
-
+  // fifth function - make new array with 1s and 3s
+  public static int[][] fill2DCopy(int[][] vals){
+    int[][] newA = new int[vals.length][];
+    for (int rows = 0; rows < vals.length; rows++) {
+      newA[rows] = new int[vals[rows].length];
+    }
+    for (int i = 0; i < vals.length; i++) {
+      for (int x = 0; x < vals[i].length; x++) {
+        if (vals[i][x] < 0) {
+          newA[i][x] = 3;
+        } else {
+          newA[i][x] = 1;
+        }
+      }
+    }
+    return newA;
+  }
 
   public static void main(String[] args){
     int[] testA = {
@@ -56,10 +72,10 @@ public class ArrayDemo{
     };
     printArray(testA);
     int[][] testB = {
-      {2, 0, 6, 8, 10},
-      {1, 3, 0, 7},
+      {2, 0, -6, 8, -10},
+      {-1, 3, 0, 7},
       {11, 0, 17, 0},
-      {30, 300},
+      {-30, 300},
     };
     System.out.println("\n-----------");
     printArray(testB);
@@ -68,5 +84,7 @@ public class ArrayDemo{
     System.out.println("------------");
     int[][] testC = new int[4][5];
     fill2D(testC);
+    System.out.println("\n------------");
+    printArray(fill2DCopy(testB));
   }
 }
