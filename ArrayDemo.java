@@ -1,4 +1,5 @@
 public class ArrayDemo{
+  // first function - print out 1D array
   public static void printArray(int[]ary){
     System.out.print("[ ");
     for (int i = 0; i < ary.length - 1; i++) {
@@ -6,6 +7,7 @@ public class ArrayDemo{
     }
     System.out.print(ary[ary.length - 1] + " ]");
   }
+  // second function - print out 2D array
   public static void printArray(int[][]ary){
     System.out.print("[ ");
     for (int r = 0; r < ary.length - 1; r++) {
@@ -21,6 +23,18 @@ public class ArrayDemo{
     System.out.print(ary[last][ary[last].length - 1]);
     System.out.print(" ]");
   }
+  // third function - count 0s in 2D array
+  public static int countZeros2D(int[][] nums){
+    int count = 0;
+    for (int i = 0; i < nums.length; i++) {
+      for (int x = 0; x < nums[i].length; x++) {
+        if (nums[i][x] == 0) {
+          count++;
+        }
+      }
+    }
+    return count;
+  }
 
 
   public static void main(String[] args){
@@ -29,12 +43,14 @@ public class ArrayDemo{
     };
     printArray(testA);
     int[][] testB = {
-      {2, 4, 6, 8, 10},
-      {1, 3, 5, 7},
-      {11, 15, 17, 20},
+      {2, 0, 6, 8, 10},
+      {1, 3, 0, 7},
+      {11, 0, 17, 0},
       {30, 300},
     };
     System.out.println("\n-----------");
     printArray(testB);
+    System.out.println("\n-----------");
+    System.out.println(countZeros2D(testB)); // 4
   }
 }
